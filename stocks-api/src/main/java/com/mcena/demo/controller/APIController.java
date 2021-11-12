@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mcena.demo.request.Company;
 import com.mcena.demo.request.ExchangeRateRequest;
 import com.mcena.demo.request.IntradayRequest;
 import com.mcena.demo.service.APIService;
@@ -21,8 +22,8 @@ public class APIController {
 	private APIService apiService;
 	
 	@PostMapping("/viewcompany")
-	public String viewCompany(@RequestParam String companyName) {
-		return apiService.viewCompany(companyName);
+	public String viewCompany(@RequestBody Company company) {
+		return apiService.viewCompany(company);
 	}
 	
 	@PostMapping("/intraday")
@@ -31,8 +32,8 @@ public class APIController {
 	}
 	
 	@PostMapping("/dailyadjusted")
-	public String viewDailyAdjusted(@RequestParam String companyName) {
-		return apiService.viewDailyAdjusted(companyName);
+	public String viewDailyAdjusted(@RequestBody Company company) {
+		return apiService.viewDailyAdjusted(company);
 	}
 	
 	@PostMapping("/exchangerate")

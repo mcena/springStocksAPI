@@ -6,9 +6,11 @@ import java.util.Properties;
 import javax.annotation.Nullable;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ApiParameterBuilder {
-
+	
 	@Value("${user.apiKey}")
 	private String apiKey;
 
@@ -19,7 +21,7 @@ public class ApiParameterBuilder {
 	public ApiParameterBuilder() {
 		this.stringBuilder = new StringBuilder();
 	}
-
+	
 	public String getParameters(@Nullable ApiParameter... parameters) throws Exception {
 		stringBuilder.append(BASE_URL);
 		appendParameter(parameters);

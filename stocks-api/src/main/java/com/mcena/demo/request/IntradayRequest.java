@@ -2,14 +2,14 @@ package com.mcena.demo.request;
 
 public class IntradayRequest {
 	private String companyName;
-	private Integer interval;
+	private String interval;
 	
 	
 	public IntradayRequest() {
 		
 	}
 	
-	public IntradayRequest(String companyName, Integer interval) {
+	public IntradayRequest(String companyName, String interval) {
 		this.companyName = companyName;
 		this.interval = interval;
 	}
@@ -22,11 +22,11 @@ public class IntradayRequest {
 		this.companyName = companyName;
 	}
 
-	public Integer getInterval() {
+	public String getInterval() {
 		return interval;
 	}
 
-	public void setInterval(Integer interval) {
+	public void setInterval(String interval) {
 		this.interval = interval;
 	}
 	
